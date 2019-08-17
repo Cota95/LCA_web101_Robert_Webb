@@ -1,6 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url(https://png.pngtree.com/thumb_back/fh260/back_pic/00/15/30/4656e81f6dc57c5.jpg);
+    background-image: url(https://png.pngtree.com/png-clipart/20190604/original/pngtree-geometric-light-with-gradient-color-png-image_834465.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 100vh;
@@ -8,9 +8,14 @@ body {
   }
   
   .logo {
-    width: 300%;
-    height: 400%;
+    width: 10vw;
+    height: 10vh;
     margin: 3% 10%;
+  }
+  h3 {
+    color: red;
+    font-size: 40px;
+    font-family: 'Lobster', cursive;
   }
   
   header {
@@ -38,6 +43,7 @@ body {
     padding: 20px; 
     text-align: center;
     border: 2px solid green;
+  
   }
   
   .has-border {
@@ -54,8 +60,8 @@ body {
   }
   
   #profile-pic {
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     border-radius: 75%;
     margin: 15% auto;
     grid-column: 2/3;
@@ -72,6 +78,7 @@ body {
     grid-column: 2/3;
     margin: 3% auto;
     font-style: italic;
+    color: green;
   }
   
   button {
@@ -83,8 +90,8 @@ body {
     font-size: 20px;
     border-radius: 25px;
     background: transparent;
-    padding: 20px; 
-    padding-bottom: 5%;
+    padding: 30px; 
+    padding-bottom: 2%;
     text-align: center;
     color: blue;
     letter-spacing: 16px;

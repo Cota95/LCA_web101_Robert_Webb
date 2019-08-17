@@ -1,0 +1,26 @@
+ h1 {
+    color: red;
+    width: 60%;
+    margin: 5% auto;
+} 
+/*
+body {
+
+}*/
+    
+main {
+    width: 60%;
+    margin: 5%;
+    color: blue;
+}
+
+article {
+    margin: 1% auto;
+    border: 3px dotted blue;
+    background: yellow;
+    width: 80%;
+}
+
+article > h3 {
+    font-size: 2cm;
+}
