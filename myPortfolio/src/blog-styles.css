@@ -1,7 +1,8 @@
  h1 {
     color: red;
-    width: 60%;
+    width: 50%;
     margin: 5% auto;
+    text-decoration: underline;
 } 
 /*
 body {
@@ -11,7 +12,13 @@ body {
 main {
     width: 60%;
     margin: 5%;
-    color: blue;
+    color: green;
+}
+
+main {
+    width: 60%;
+    margin: 5%;
+    color: blue !important;
 }
 
 article {
@@ -22,5 +29,23 @@ article {
 }
 
 article > h3 {
+    font-size: 15cm;
+}
+
+h2:hover {
+    color: green;
+}
+
+article:hover:first-letter {
+    color: red;
+}
+
+p:hover:first-letter {
+    background-color: red;
+}
+
+h3 {
     font-size: 2cm;
+    color: purple;
+    text-decoration: underline wavy red;
 }
