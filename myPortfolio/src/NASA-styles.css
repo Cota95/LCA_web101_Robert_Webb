@@ -1,0 +1,43 @@
+section {
+    display: flex;
+    
+}
+
+article {
+    width: 270px;
+    height: 324px;
+    background-color: aquamarine;
+}
+
+img {
+    width: 850px;
+    height: 450px;
+}
+
+.middle {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+main {
+    justify-items: center;
+    display: grid;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;  
+}
+
+.nasa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+}
+
+p {
+    margin: 0px;
+}
