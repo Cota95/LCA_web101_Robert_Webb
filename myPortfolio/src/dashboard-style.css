@@ -1,21 +1,48 @@
-body {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 50% 50%;
+
+* {
+  box-sizing: border-box;
 }
+
+head {
+  grid-template-rows: 15%;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 80%;
+  grid-template-areas: "header header";
+  background-image: url(background2.jpg);
+  background-size: cover;
+}
+
 
 .container {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 50% 50%;
+  height: 100%;
 }
+
+div.a {
+  text-align: left;
+  height: 75%;
+  width: 100%
+}
+
+
 header {
   grid-area: header;
+  font-size: 50px;
+  text-align: center;
+  height: 75px;
 }
 
 
 html {
-    font-size: 62.5%;
+    font-size: 88.5%;
     box-sizing: border-box;
 }
 
@@ -27,12 +54,7 @@ html {
 
 .calculator {
     border: 1px solid #ccc;
-    border-radius: 5px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
+    border-radius: 5px;  
   }
 
   .calculator-screen {
@@ -99,8 +121,47 @@ html {
   }
 
   .clock {
+    grid-column: 2/2;
+    grid-row: 1/3;
+  }
+
+  h1 {
+    font-size: 30px;
+    height: 25px;
+    text-decoration: underline;
+  }
+
+  .todo {
     grid-column: 2/3;
     grid-row: 2/3;
+    height: 50vh;
+    width: 10vw;
+    margin: auto;
+
+    *, *:after, *:before
+  box-sizing border-box
+  color #3E434F
+  font-family "Roboto"
+  list-style none
+  margin 0
+  padding 0
+  text-decoration none
+  transition all .2s
+  
+::selection
+  background #50E3A4
+  color #fff
+
+::-moz-selection
+  background #50E3A4
+  color #fff
+  
+body
+  background #F0EFE9
+  height 100vh
+  width 100vw
+  
+.btn
   }
 
 
