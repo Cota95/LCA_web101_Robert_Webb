@@ -137,8 +137,13 @@ html {
     height: 50vh;
     width: 10vw;
     margin: auto;
+  }
 
-    *, *:after, *:before
+  ul {
+    font-size: 17px;
+  }
+
+    *, *:after, *:before {
   box-sizing border-box
   color #3E434F
   font-family "Roboto"
@@ -147,6 +152,7 @@ html {
   padding 0
   text-decoration none
   transition all .2s
+    }
   
 ::selection
   background #50E3A4
