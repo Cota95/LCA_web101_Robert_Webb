@@ -37,7 +37,6 @@ header {
   grid-area: header;
   font-size: 50px;
   text-align: center;
-  height: 75px;
 }
 
 
@@ -135,7 +134,6 @@ html {
     grid-column: 2/3;
     grid-row: 2/3;
     height: 50vh;
-    width: 10vw;
     margin: auto;
   }
 
@@ -170,4 +168,83 @@ body
 .btn
   }
 
+/* Extra Small and up (Portrait Phones) */
+@media only screen and (max-width : 320px) {
+  
+  header {
+  font-size: 10px;
+  height: 10px;
+  }
 
+  .calculator-screen {
+    height: 40px;
+  }
+
+  .calculator-keys {
+    height: 250px;
+
+    h1 {
+      font-size: 15px;
+      height: 5px;
+    }
+
+    ul {
+     font-size: 1px;
+    }
+
+    body {
+      height: 30vh;
+    }
+
+
+}
+
+/* Small and up (Landscape Phones) */
+@media (max-width: 576px) {
+
+  header {
+    font-size: 10px;
+    height: 10px;
+  }
+
+  .calculator-screen {
+    height: 60px;
+  }
+
+  .calculator-keys [
+    height: 250px;
+  ]
+
+  h1 {
+    font-size: 15px;
+    height: 5px;
+  }
+
+  .todo {
+    height: 25vh;
+  }
+
+  ul {
+    font-size: 1px;
+  }
+
+  body {
+    height: 30vh;
+  }
+
+}
+
+/* Medium and up (Tablets) */
+@media (max-width: 768px) {
+
+}
+
+/* Large and up (Desktops) */
+@media (max-width: 992px) {
+
+}
+
+/* Extra Large and up (Wide Screen Desktops) */
+@media (min-width: 1200px) {
+
+}
