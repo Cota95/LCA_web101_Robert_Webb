@@ -1,37 +1,40 @@
-body {
-    display: grid;
-    grid-template-rows: 25% 25% 25% 25%;
-    margin: 0;
+section {
+    display: flex;
 }
 
-img {
-    height: 50px;
-    width: 50px;
+header {
+    background-color: bisque;
+    height: 100px;
+    text-align: center;
 }
+
+h1 {
+    text-align: center;
+    color: black;
+}
+
+.row {
+  display: flex; 
+}
+
+.column {
+    flex: 33.33%;
+    padding: 5px;
+    justify-content: center;
+  }
+  
+
+
+
+
     
 
-.item-1 {
-    grid-area: head;
-}
-
-.item-2 {
-    grid-area: main;
-}
-
-.item-3 {
-    grid-area: article;
-}
-
-.item-4 {
-    grid-area: footer;
-}
 
 
 
-.container {
-    display: grid;
-    grid-template-rows: 100px 100px 100px 100px;
-}
+
+
+
 
 
 
