@@ -1,0 +1,12 @@
+header {
+    font-size: 80px;
+    color: blue;
+    text-align: center;
+    font-family: fantasy;
+    background-color: aquamarine;
+}
+
+h1 a {
+    color: red;
+    word-spacing: 20px;
+}
