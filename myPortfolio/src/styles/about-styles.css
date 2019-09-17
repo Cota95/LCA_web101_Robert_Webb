@@ -1,0 +1,28 @@
+header {
+    font-size: 70px;
+    text-align: center;
+    background-color: aqua;
+    padding: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+main {
+    background-color: yellow;
+}
+
+div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+
+}
+
+img {
+    width: 33%;
+    height: auto;
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Safari 3-8 */
+  transform: rotate(90deg);
+}
