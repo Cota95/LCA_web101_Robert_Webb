@@ -1,5 +1,8 @@
 body {
     background-color: #9E3F3F;
+    background-image: url(../images/hotairballoon.jpg);
+    background-repeat: no-repeat;
+    background-size: 1500px 800px;
 }
 
 
@@ -84,4 +87,26 @@ textarea{
 }
 .button:hover {
     background: #CF7A7A
+}
+
+/* Extra Small and up (Portrait Phones) */
+
+/* Small and up (Landscape Phones) */
+@media (min-width: 576px) {
+
+}
+
+/* Medium and up (Tablets) */
+@media (min-width: 768px) {
+
+}
+
+/* Large and up (Desktops) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra Large and up (Wide Screen Desktops) */
+@media (min-width: 1200px) {
+
 }
