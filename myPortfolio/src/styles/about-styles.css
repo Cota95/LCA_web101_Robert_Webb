@@ -1,9 +1,10 @@
 header {
-    font-size: 70px;
+    font-size: 75px;
     text-align: center;
-    background-color: aqua;
+    color: orange;
     padding: 30px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: cursive;
+    background-image: url(../images/clouds.jpg);
 
 }
 
@@ -11,18 +12,87 @@ main {
     background-color: yellow;
 }
 
+h1 {
+  text-align: center;
+  font-size: 30px;
+  margin: 0px;
+  background-image: url(../images/blueswirl.jpg);
+  color: orange;
+  padding: 10px;
+
+}
+
+
+
 div {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-auto-rows: minmax (900px 500px);
     grid-template-areas: 
+    "list img art"
+    ". . .";
+    padding: 150px 20px;
 
 }
 
 img {
-    width: 33%;
-    height: auto;
+    width: 700px;
+    height: 600px;
+    grid-area: img;
   -ms-transform: rotate(90deg); /* IE 9 */
   -webkit-transform: rotate(90deg); /* Safari 3-8 */
   transform: rotate(90deg);
+  border: 5px solid black;
+}
+
+section {
+  grid-area: list;
+}
+
+article {
+  grid-area: art;
+}
+
+h2 {
+  font-size: 50px;
+  text-decoration: underline;
+  font-style: oblique;
+  color: red;
+}
+
+ul {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 50px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: red;
+}
+.canyon {
+  position: absolute;
+  top: 35%;
+  left: 39%;
+  transform: translate(-50% -50%);
+  font-size: 130px;
+  font-family: fantasy;
+  color: ivory;
+  text-shadow: 5px 5px 15px black;
+}
+
+.button {
+  border: none;
+  color: lightblue;
+  background-color: darkblue;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+fieldset {
+  background-color: lightgray;
 }
