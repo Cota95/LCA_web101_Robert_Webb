@@ -68,7 +68,7 @@ body {
   }
   
   h1 {
-    color:blue;
+    color: yellow;
     grid-column: 2/3;
     margin: 3% auto;
     border-bottom: 2px dotted #1940A9;
@@ -79,7 +79,7 @@ body {
     grid-column: 2/3;
     margin: 3% auto;
     font-style: italic;
-    color: green;
+    color: yellow;
     font-size: 1cm;
   }
   
@@ -91,11 +91,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
     border-radius: 35px;
-    background: transparent;
+    background: yellow;
     padding: 10px; 
     padding-bottom: 3%;
     text-align: center;
-    color: blue;
+    color: purple;
     letter-spacing: 16px;
     font-style: italic;
   }
