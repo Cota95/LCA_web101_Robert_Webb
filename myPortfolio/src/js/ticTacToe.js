@@ -1,148 +1,163 @@
-(function Game() {
-    // Elements
-    var game = document.getElementById('game');
-    var boxes = document.querySelectorAll('li');
-    var resetGame = document.getElementById('reset-game');
-    var turnDisplay = document.getElementById('whos-turn');
-    var gameMessages = document.getElementById('game-messages');
-    var playerOneScoreCard = document.getElementById('player-one-score');
-    var playerTwoScoreCard = document.getElementById('player-two-score');
+
+
+
+var winners = new Array();
+var player1Selections = new Array();
+var player2Selections = new Array();
+var timer;
+var numberOfPlayers = 2;
+var currentPlayer = 0;
+var move = 0;
+var points1 = 0;    // player 1 points
+var points2 = 0;    // player 2 points
+var size = 3;
+
+function drawBoard() {
+    var Parent = document.getElementById("game");
+    var counter = 1;
     
-    // Vars
-    var context = { 'player1' : 'x', 'player2' : 'o' };
-    var board = [];
-    
-    var playerOneScore = 0;
-    var playerTwoScore = 0;
-    
-    var turns;
-    var currentContext;
-    
-    // Constructor
-    var init = function() {
-        turns = 0;
-        
-        // Get current context
-        currentContext = computeContext();
-        
-        // Setup 3 x 3 board 
-        board[0] = new Array(3);
-        board[1] = new Array(3);
-        board[2] = new Array(3);
-        
-        // bind events
-        for(var i = 0; i < boxes.length; i++) {
-            boxes[i].addEventListener('click', clickHandler, false);
-        }
-        
-        resetGame.addEventListener('click', resetGameHandler, false);
-    }
-    
-    //Keeps track of player's turn
-    var computeContext = function() {
-        return (turns % 2 == 0) ? context.player1 : context.player2;
-    }
-    
-    // Bind the dom element to the click callback
-    var clickHandler = function() {
-        this.removeEventListener('click', clickHandler);
-        
-        this.className = currentContext;
-        this.innerHTML = currentContext;
-        
-        var pos = this.getAttribute('data-pos').split(',');
-        board[pos[0]][pos[1]] = computeContext() == 'x' ? 1 : 0;
-        
-        if(checkStatus()) {
-            gameWon();
-        }
-        
-        turns++;
-        currentContext = computeContext();
-        turnDisplay.className = currentContext;
+    while (Parent.hasChildNodes()) {
+        Parent.removeChild(Parent.firstChild);
     }
 
-     // Check to see if player has won
-     var checkStatus = function() {
-        var used_boxes = 0;
+    for (s = 0; s < 3; s++) {
+        var row = document.createElement("tr");
         
-        for(var rows = 0; rows < board.length; rows++ ) {
-            var row_total = 0;
-            var column_total = 0;
+        for (r = 0; r < 3; r++) {
+            var col = document.createElement("td");
+            col.id = counter;
+
+            var handler = function(e) {
+                if (currentPlayer == 0) {
+                    this.innerHTML = "X";
+                    player1Selections.push(parseInt(this.id));
+                    player1Selections.sort(function(a, b) { return a - b });
+                    d('player1').classList.remove('selected');
+                    d('player2').classList.add('selected');
+                }
+
+                else {
+                    this.innerHTML = "O";
+                    player2Selections.push(parseInt(this.id));
+                    player2Selections.sort(function(a, b) { return a - b });
+                    d('player1').classList.add('selected');
+                    d('player2').classList.remove('selected');
+                }
+
+                if (checkWinner())
+                {
+                    if(currentPlayer == 0)
+                        points1++;
+                    else
+                        points2++;
+
+                    document.getElementById("player1").innerHTML = points1;
+                    document.getElementById("player2").innerHTML = points2;
+
+                    reset();
+                    drawBoard();
+                }
+
+                else if (player2Selections.length + player1Selections.length == 9)
+                {
+                    reset();
+                    drawBoard();
+                }
+                else
+                {
+                    if (currentPlayer == 0)
+                        currentPlayer = 1;
+                    else
+                        currentPlayer = 0;
+                    this.removeEventListener('click', arguments.callee);
+                }
+            };
+
+            col.addEventListener('click', handler);
+
+            row.appendChild(col);
+            counter++;
+        }
+
+        Parent.appendChild(row);
+    }
+
+    loadAnswers();
+}
+
+function d(id)
+{
+    var el = document.getElementById(id);
+    return el;
+}
+function reset()
+{
+    currentPlayer = 0;
+    player1Selections = new Array();
+    player2Selections = new Array();
+    d('player1').classList.add('selected');
+    d('player2').classList.remove('selected');
+}
+
+function loadAnswers()
+{
+    winners.push([1, 2, 3]);
+    winners.push([4, 5, 6]);
+    winners.push([7, 8, 9]);
+    winners.push([1, 4, 7]);
+    winners.push([2, 5, 8]);
+    winners.push([3, 6, 9]);
+    winners.push([1, 5, 9]);
+    winners.push([3, 5, 7]);
+}
+
+function checkWinner() {
+    // check if current player has a winning hand
+    // only stsrt checking when player x has size number of selections
+    var win = false;
+    var playerSelections = new Array();
+
+    if (currentPlayer == 0)
+        playerSelections = player1Selections;
+    else
+	playerSelections = player2Selections;
+    
+    if (playerSelections.length >= size) {
+        // check if any 'winners' are also in your selections
+        
+        for (i = 0; i < winners.length; i++) {
+            var sets = winners[i];  // winning hand
+            var setFound = true;
             
-            for(var columns = 0; columns < board[rows].length; columns++) {
-                row_total += board[rows][columns];
-                column_total += board[columns][rows];
+            for (r = 0; r < sets.length; r++) {
+                // check if number is in current players hand
+                // if not, break, not winner
+                var found = false;
                 
-                if(typeof board[rows][columns] !== "undefined") {
-                    used_boxes++;
+                // players hand
+                for (s = 0; s < playerSelections.length; s++) {
+                    if (sets[r] == playerSelections[s]) {
+                        found = true;
+                        break;
+                    }
+                }
+
+                // value not found in players hand
+                // not a valid set, move on
+                if (found == false) {
+                    setFound = false;
+                    break;
                 }
             }
-            
-            // Winning combination for diagonal scenario [0,4,8], [2,4,6]
-            var diagonal_tl_br = board[0][0] + board[1][1] + board[2][2]; // diagonal top left to bottom right
-            var diagonal_tr_bl = board[0][2] + board[1][1] + board[2][0]; // diagonal top right bottom left
-            
-            if(diagonal_tl_br == 0 || diagonal_tr_bl == 0 || diagonal_tl_br == 3 || diagonal_tr_bl == 3) {
-                return true;
-            }
-            
-            // Winning combination for row [0,1,2], [3,4,5], [6,7,8]
-            // Winning combination for column [0,3,6], [1,4,7], [2,5,8]
-            // Only way to win is if the total is 0 or if the total is 3. X are worth 1 point and O are worth 0 points
-            if(row_total == 0 || column_total == 0 || row_total == 3 || column_total == 3) {
-                return true;
-            }
-            
-            // if all boxes are full - Draw!!!
-            if(used_boxes == 9) {
-                gameDraw();
-            }
-        }
-    }
-    var gameWon = function() {
-        clearEvents();
-        
-        // show game won message
-        gameMessages.className = 'player-' + computeContext() + '-win';
-        
-        // update the player score
-        switch(computeContext()) {
-            case 'x':
-                playerOneScoreCard.innerHTML = ++playerOneScore;
+
+            if (setFound == true) {
+                win = true;
                 break;
-            case 'o':
-                playerTwoScoreCard.innerHTML = ++playerTwoScore;
+            }
         }
     }
-    // Tells user when game is a draw.
-    var gameDraw = function() {
-        gameMessages.className = 'draw';
-        clearEvents();
-    }
-    
-    // Stops user from clicking empty cells after game is over
-    var clearEvents = function() {
-        for(var i = 0; i < boxes.length; i++) {
-            boxes[i].removeEventListener('click', clickHandler);
-        }
-    }
-    // Reset game to play again
-    var resetGameHandler = function() {
-        clearEvents();
-        init();
-        
-        // Go over all the li nodes and remove className of either x,o
-        // clear out innerHTML
-        for(var i = 0; i < boxes.length; i++) {
-            boxes[i].className = '';
-            boxes[i].innerHTML = '';
-        }
-        
-        // Change Who's turn class back to player1
-        turnDisplay.className = currentContext;
-        gameMessages.className = '';
-    }
-    
-    game && init();
-})();
+
+    return win;
+} 
+
+window.addEventListener('load', drawBoard);

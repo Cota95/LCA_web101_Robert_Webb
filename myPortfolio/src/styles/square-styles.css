@@ -1,112 +1,83 @@
+.box {
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  margin: 10%;
+}
 
-#timings_demo {
-    position:relative;
-   /* width:530px;
-    height:530px;*/
-    margin:0 auto 10px;
-    border:1px #aaa solid;
-    padding:140px;
-  }
-  
-  .test_box {
-    font-size:12px;
-    position:relative;
-    width:50px;
-    height:50px;
-    margin-bottom:10px;
-    background-color:white;
-    margin: auto;
-  }
-  
-  .test_box p {
-    text-align:center;
-    padding-top:4px;
-  } 
+.boxes {
+  margin: 3% 48%;
+}
 
-    
+.odd {
+  transition: transform 2s;
+}
 
-  #ease.test_box {
-   /* -webkit-transition: all 4s ease;
--moz-transition: all 4s ease;
--o-transition: all 4s ease;
-transition: all 4s ease; */  border:1px #f00 solid; 
--ms-transform: scale(2,3); /* IE 9 */
-  -webkit-transform: scale(2,3); /* Safari prior 9.0 */
-  transform: scale(2,3); /* Standard syntax */
-  
+.even {
+  transition: transform 2s;
+}
+
+.boxes:hover .odd {
+transform: scale(2) translateX(300px) rotate(360deg);
+}
+
+.boxes:hover .even {
+  transform: scale(.5) translateX(-800px) rotate(-360deg);
   }
 
-  #ease-in.test_box {
-   /* -webkit-transition: all 4s ease-in;
--moz-transition: all 4s ease-in;
--o-transition: all 4s ease-in;
-transition: all 4s ease-in; */   border:1px #0f0 solid;
--ms-transform: scale(0.5,0.5); /* IE 9 */
-  -webkit-transform: scale(0.5,0.5); /* Safari prior 9.0 */
-  transform: scale(0.5,0.5); /* Standard syntax */
-  }
 
-  #ease-out.test_box {
-  /* -webkit-transition: all 4s ease-out;
--moz-transition: all 4s ease-out;
--o-transition: all 4s ease-out;
-transition: all 4s ease-out; */   border:1px #00f solid;
--ms-transform: scale(2,3); /* IE 9 */
-  -webkit-transform: scale(2,3); /* Safari prior 9.0 */
-  transform: scale(2,3); /* Standard syntax */
-  }
 
-  #ease-in-out.test_box {
-   /* -webkit-transition: all 4s ease-in-out;
--moz-transition: all 4s ease-in-out;
--o-transition: all 4s ease-in-out;
-transition: all 4s ease-in-out; */   border:1px #ff0 solid;
--ms-transform: scale(0.5,0.5); /* IE 9 */
-  -webkit-transform: scale(0.5,0.5); /* Safari prior 9.0 */
-  transform: scale(0.5,0.5); /* Standard syntax */
-  }
+.one {
+  background-color: purple;
+}
 
-  #linear.test_box {
-   /*  -webkit-transition: all 4s linear;
--moz-transition: all 4s linear;
--o-transition: all 4s linear;
-transition: all 4s linear; */   border:1px #f0f solid;
--ms-transform: scale(2,3); /* IE 9 */
-  -webkit-transform: scale(2,3); /* Safari prior 9.0 */
-  transform: scale(2,3); /* Standard syntax */
-  }
+.two {
+  background-color: blue;
+}
 
-  #custom.test_box {
-   /* -webkit-transition: all 4s cubic-bezier(1.000, 0.835, 0.000, 0.945);
--moz-transition: all 4s cubic-bezier(1.000, 0.835, 0.000, 0.945);
--o-transition: all 4s cubic-bezier(1.000, 0.835, 0.000, 0.945);
-transition: all 4s cubic-bezier(1.000, 0.835, 0.000, 0.945); */   border:1px #0ff solid;
--ms-transform: scale(0.5,0.5); /* IE 9 */
-  -webkit-transform: scale(0.5,0.5); /* Safari prior 9.0 */
-  transform: scale(0.5,0.5); /* Standard syntax */
-  }
+.three {
+  background-color: rgb(0, 128, 75);
+}
 
-  #negative.test_box {
-   /* -webkit-transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
--moz-transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
--o-transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
-transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425); */   border:1px #000 dotted;
--ms-transform: scale(2,3); /* IE 9 */
-  -webkit-transform: scale(2,3); /* Safari prior 9.0 */
-  transform: scale(2,3); /* Standard syntax */
-  }
+.four {
+  background-color: rgb(94, 128, 0);
+}
 
-  #timings_demo:hover .test_box, #timings_demo.hover_effect .test_box {
-    -webkit-border-radius:30px;
-    -moz-border-radius:30px;
-    border-radius:30px;
-    -webkit-transform: rotate(720deg);
--moz-transform: rotate(720deg);
--o-transform: rotate(720deg);
--ms-transform: rotate(720deg);
-transform: rotate(720deg);    margin-left:420px;
-    background-color:#fff;
-  }
+.five {
+  background-color: rgb(128, 47, 0);
+}
+
+.six {
+  background-color: rgb(0, 113, 128);
+}
+
+.seven {
+  background-color: rgb(128, 105, 0);
+}
+
+.eight {
+  background-color: rgb(87, 0, 128);
+}
+
+.nine {
+  background-color: rgb(0, 102, 128);
+}
+
+.ten {
+  background-color: rgb(128, 0, 6);
+}
+
+.eleven {
+  background-color: rgb(68, 128, 0);
+}
+
+.twelve {
+  background-color: rgb(70, 0, 128);
+}
+
+
+
+
 
       
 
