@@ -161,3 +161,17 @@ function checkWinner() {
 } 
 
 window.addEventListener('load', drawBoard);
+
+/*
+var xTurn = true;
+function placemarker (ID) {
+    if(Turn){
+        document.getElementById(ID).innerHTML= 'x';
+    }
+    else{
+        document.getElementById(ID).innerHTML= 'o'
+    }
+    
+    xTurn = !xTurn;   
+}
+*/
