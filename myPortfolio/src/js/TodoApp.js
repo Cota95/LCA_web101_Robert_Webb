@@ -5,7 +5,7 @@ $(function() {
 
   $newItemForm.on('submit', function(e) {
     e.preventDefault();
-    let text = $('input[type="text"]').val();
+    let text = $('input.inputtodo[type="text"]').val();
     $list.append(`<li>${text}</li>`);
     $('input[type="text"]').val('');
   });
