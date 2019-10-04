@@ -120,11 +120,12 @@ html {
   }
 
   .clock {
-    grid-column: 3/4;
-    grid-row: 1/3;
-    margin: auto;
+    grid-column: 1/2;
+    grid-row: 2/2;
+    /*margin: auto;
     position: absolute;
-    left: 70px;
+    left: 70px;*/
+    padding: 100px;
   }
 
   
@@ -137,109 +138,20 @@ html {
 
   .todo {
     grid-column: 3/4;
-    grid-row: 2/3;
+    grid-row: 1/3;
     height: 50vh;
-    margin: auto;
+    margin: 0;
     /*margin-left: 90px;*/
   }
 
-  #list_section {
-    text-align: center;
-  }
   
-  h1 {
-    color: white;
-    margin: 0px auto;
-    padding: 20px;
-  }
-  
-  ul {
-    padding: 0;
-  }
-  
-  li {
-    background-color: #fff;
-    color: #000;
-    font-size: 20px;
-    list-style-type: none;
-    width: 20%;
-    margin: 0px auto;
-    border-radius: 3px;
-    border: 1px solid #000;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  p {
-    background-color: #fff;
-    color: #666;
-    padding: 10px;
-    display: inline-block;
-    margin: 20px auto 20px auto;
-    width: 80%;
-    border-radius: 5px;
-    text-align: center;
-  }
-  
-  .item {
-    background-color: #fff;
-    color: #000;
-  }
-  
-  input[type='text'] {
-    font-size: 12px;
-    padding: 6px;
-    border: 1px solid #000;
-    border-radius: 3px;
-  }
-  
-  input[type='submit'] {
-    background-color: #fff;
-    color: #000;
-    border-radius: 8px;
-    border: none;
-    padding: 5px;
-  }
-  
-  #newItemButton {
-    display: none;
-  }
-  
-  #itemField {
-    margin-top: 60px;
-    width: 10%;
-  }
 
-  /*ul {
-    font-size: 17px;
-  }
+  
 
-    *, *:after, *:before {
-  box-sizing border-box
-  color #3E434F
-  font-family "Roboto"
-  list-style none
-  margin 0
-  padding 0
-  text-decoratio none
-  transition all .2s
-    }
   
-::selection
-  background #50E3A4
-  color #fff
+  
 
-::-moz-selection
-  background #50E3A4
-  color #fff
-  
-body
-  background #F0EFE9
-  height 100vh
-  width 100vw
-  
-.btn
-  }*/
+
   @media (max-width: 576px) {
 
   header {
