@@ -3,8 +3,22 @@
   box-sizing: border-box;
 }
 
-head {
+/* you don't style the head secton */
+
+/*head {
   grid-template-rows: 15%;
+}
+*/
+
+html {
+  font-size: 88.5%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 body {
@@ -18,106 +32,93 @@ body {
   background-size: cover;
 }
 
-
-.container {
-  display: grid;
-  grid-template-columns: 30% 20% 30% 20%; /* 50 50 */
-  grid-template-rows: 50% 50%;
-  height: 100%;
-}
-
-div.a {
-  text-align: left;
-  height: 75%;
-  width: 100%
-}
-
-
 header {
-  grid-area: header;
   font-size: 50px;
   text-align: center;
 }
 
-
-html {
-    font-size: 88.5%;
-    box-sizing: border-box;
-}
-
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
-
 .calculator {
-    border: 1px solid #ccc;
-    border-radius: 5px;  
-  }
+  border: 1px solid #ccc;
+  border-radius: 5px;  
+}
 
-  .calculator-screen {
-    width: 100%;
-    font-size: 5rem;
-    height: 80px;
-    border: none;
-    background-color: #252525;
-    color: #fff;
-    text-align: right;
-    padding-right: 20px;
-    padding-left: 10px;
-  }
+.calculator-screen {
+  width: 100%;
+  font-size: 5rem;
+  height: 80px;
+  border: none;
+  background-color: #252525;
+  color: #fff;
+  text-align: right;
+  padding-right: 20px;
+  padding-left: 10px;
+}
 
-  button {
-    height: 60px;
-    background-color: #fff;
-    border-radius: 3px;
-    border: 1px solid #c4c4c4;
-    background-color: transparent;
-    font-size: 2rem;
-    color: #333;
-    background-image: linear-gradient(to bottom,transparent,transparent 50%,rgba(0,0,0,.04));
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0 0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
-    text-shadow: 0 1px rgba(255,255,255,.4);
-  }
-  
-  button:hover {
-    background-color: #eaeaea;
-  }
-  
-  .operator {
-    color: #337cac;
-  }
-  
-  .all-clear {
-    background-color: #f0595f;
-    border-color: #b0353a;
-    color: #fff;
-  }
-  
-  .all-clear:hover {
-    background-color: #f17377;
-  }
-  
-  .equal-sign {
-    background-color: #2e86c0;
-    border-color: #337cac;
-    color: #fff;
-  }
-  
-  .equal-sign:hover {
-    background-color: #4e9ed4;
-  }
+button {
+  height: 60px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #c4c4c4;
+  background-color: transparent;
+  font-size: 2rem;
+  color: #333;
+  background-image: linear-gradient(to bottom,transparent,transparent 50%,rgba(0,0,0,.04));
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0 0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
+  text-shadow: 0 1px rgba(255,255,255,.4);
+}
 
-  .calculator-keys {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
+button:hover {
+  background-color: #eaeaea;
+}
 
-  .calculator {
+.operator {
+  color: #337cac;
+}
+
+.all-clear {
+  background-color: #f0595f;
+  border-color: #b0353a;
+  color: #fff;
+}
+
+.all-clear:hover {
+  background-color: #f17377;
+}
+
+.equal-sign {
+  background-color: #2e86c0;
+  border-color: #337cac;
+  color: #fff;
+}
+
+.equal-sign:hover {
+  background-color: #4e9ed4;
+}
+
+.calculator-keys {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
+.container {
+  display: grid;
+  grid-template-columns: /*30% 20% 30% 20%;*/  50% 50%;
+  grid-template-rows: /*50% 50%*/ 33.33% 33.33% 33.33%;
+  height: 100%;
+} 
+
+div.a {
+  /*text-align: left;
+  height: 75%;
+  width: 100% */
+} 
+
+
+  /*.calculator {
     grid-column: 1/2;
     grid-row: 1/2;
-  }
+  } */
 
   .clock {
     grid-column: 1/2;
@@ -131,25 +132,122 @@ html {
   
 
   h1 {
-    font-size: 30px;
-    height: 25px;
+    /*font-size: 10px;
+    /height: 25px;
     text-decoration: underline;
-  }
+  } */
 
   .todo {
-    grid-column: 3/4;
+    /*grid-column: 3/4;
     grid-row: 1/3;
     height: 50vh;
     margin: 0;
     /*margin-left: 90px;*/
   }
 
-  
+  .tower {
+    background-color: #000;
+  }
 
-  
+  /* jQuery To Do List Styles */
+#list_section {
+  text-align: center;
+}
 
+h1 {
+  color: white;
+  margin: 0px auto;
+  padding: 20px;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  background-color: #fff;
+  color: #000;
+  font-size: 20px;
+  list-style-type: none;
+  width: 80%;
+  margin: 0px auto;
+  border-radius: 3px;
+  border: 1px solid #000;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+p {
+  background-color: #fff;
+  color: #666;
+  padding: 10px;
+  display: inline-block;
+  margin: 20px auto 20px auto;
+  width: 80%;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.item {
+  background-color: #fff;
+  color: #000;
+}
+
+#newItemButton {
+  display: none;
+}
+
+form input.inputtodo[type='submit'] {
+  background-color: #fff;
+  color: #000;
+  border-radius: 8px;
+  border: none;
+  padding: 7px 20px;
+}
+form input.inputtodo[type='text']  {
+  font-size: 16px;
+  padding: 6px;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+#inputtodo {
+  margin-top: 40px;
+  margin-left: 20px;
+  width: 60%;
+  font-size: 20px;
+}
+
+
+  /* Define Grid Areas */
+  header {
+    grid-area: header;
+  }
+
+  .calculator {
+    grid-area: calculator;
+  }
+
+  .clock {
+    grid-area:clock;
+  }
+
+  .todo {
+    grid-area: todo;
+  }
+
+  @media(min-width:320px){
+    .container{
+      display:grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas:
+      "header"
+      "calculator"
+      "clock"
+      "todo";
+    }
   
-  
+  }
 
 
   @media (max-width: 576px) {
@@ -189,6 +287,20 @@ html {
 
 /* Extra Small and up (Portrait Phones) */
 @media only screen and (max-width : 320px) {
+
+    .container{
+      display:grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas:
+      "header"
+      "calculator"
+      "clock"
+      "todo";
+    }
+  
+  
+
   
   header {
   font-size: 25px;
@@ -248,7 +360,7 @@ html {
     }
 
 
-}
+} 
 
 /* Small and up (Landscape Phones) */
 
@@ -256,10 +368,32 @@ html {
 /* Medium and up (Tablets) */
 @media (max-width: 768px) {
 
-}
+  @media(min-width:768px)
+    .container{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1% 45% auto;
+      grid-template-areas: 
+      "header header"
+      "calculator clock"
+      ". todo";
+    }
+  
+
+
 
 /* Large and up (Desktops) */
 @media (max-width: 992px) {
+  .container{
+    display:grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    /* grid-template-rows: 30% 40% 30%; */
+    grid-template-areas: 
+    "header header header"
+    "calculator . clock"
+    ". . todo";
+    padding: 0 40px;
+  }
 
 }
 
