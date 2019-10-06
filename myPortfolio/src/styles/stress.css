@@ -1,0 +1,26 @@
+.container {
+    padding:5px 30px 30px 30px;
+    margin:30px;
+    border:solid yellow 5px;
+    border-radius:15px;
+    /*background-color:#e6e6e6;*/
+    text-align:center;
+    width: 450px;
+  }
+  
+  .btn-success, .btn-danger {
+    width:200px;
+  }
+
+  body {
+    background-color: aquamarine;
+  }
+
+  .btn  {
+    background-color: blueviolet;
+    color: yellow;
+  }
+
+  table {
+    margin: auto;
+  }
