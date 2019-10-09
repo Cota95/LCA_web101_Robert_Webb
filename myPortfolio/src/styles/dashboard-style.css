@@ -41,15 +41,15 @@ header {
 }
 
 .calculator {
-  border: 2px solid yellow;
-  border-radius: 5px;  
+  /*border: 2px solid yellow;
+  border-radius: 5px;*/ 
 }
 
 .calculator-screen {
-  width: 100%;
+  width: 202px;
   font-size: 5rem;
-  height: 80px;
-  border: none;
+  height: 70px;
+  border: 5px solid red;
   background-color: #252525;
   color: #fff;
   text-align: right;
@@ -101,6 +101,10 @@ button:hover {
 .calculator-keys {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 200px;
+  position: absolute;
+  left: 290px;
+  border: 2px solid red;
 }
 
 
@@ -112,9 +116,11 @@ button:hover {
                      "calculator todo"
                      "clock Hanoi"
                      ". stress";*/
-  height: 600px;
+  height: 550px;
   /*width: 800px;*/
   background-color: #4e9ed4;
+  position: absolute;
+  right: 120px;
 } 
 
 div.a {
@@ -135,8 +141,9 @@ div.a {
     /*margin: auto;
     position: absolute;
     left: 70px;*/
-    padding: 100px;
+    padding: 90px;
     border: 2px solid yellow;
+    border-radius: 20px;
   }
 
   
@@ -146,6 +153,22 @@ div.a {
     height: 25px;
     text-decoration: underline;
   } 
+
+  h2 {
+    font-size: 70px;
+    /*text-align: center;*/
+    height: 20px;
+    font-family: fantasy;
+  }
+
+  h3 {
+    font-size: 50px;
+  }
+
+  h4 {
+    font-size: 40px;
+    font-family: fantasy;
+  }
 
   .todo {
     grid-column: 2/2;
@@ -236,7 +259,7 @@ form input.inputtodo[type='text']  {
 .section {
   padding:5px 30px 30px 30px;
   margin:30px;
-  border:solid yellow 5px;
+  /*border:solid yellow 5px;*/
   border-radius:15px;
   /*background-color:#e6e6e6;*/
   text-align:center;
